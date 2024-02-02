@@ -75,11 +75,11 @@ build_window_format() {
 
   if [ "$fill" = "none" ]
   then
-    local show_left_separator="#[fg=$thm_gray,bg=$thm_bg,nobold,nounderscore,noitalics]$window_left_separator"
-    local show_number="#[fg=$thm_fg,bg=$thm_gray]$number"
-    local show_middle_separator="#[fg=$thm_fg,bg=$thm_gray,nobold,nounderscore,noitalics]$window_middle_separator"
-    local show_text="#[fg=$thm_fg,bg=$thm_gray]$text"
-    local show_right_separator="#[fg=$thm_gray,bg=$thm_bg]$window_right_separator"
+    local show_left_separator="#[fg=$thm_bg,bg=$thm_bg,nobold,nounderscore,noitalics]$window_left_separator"
+    local show_number="#[fg=$thm_fg,bg=$thm_bg]$number"
+    local show_middle_separator="#[fg=$thm_fg,bg=$thm_bg,nobold,nounderscore,noitalics]$window_middle_separator"
+    local show_text="#[fg=$thm_fg,bg=$thm_bg]$text"
+    local show_right_separator="#[fg=$thm_bg,bg=$thm_bg]$window_right_separator"
 
   fi
 
@@ -136,33 +136,33 @@ build_status_module() {
 
   if [ "$status_fill" = "icon" ]
   then
-    local show_left_separator="#[fg=$color,bg=$thm_gray,nobold,nounderscore,noitalics]$status_left_separator"
+    local show_left_separator="#[fg=$color,bg=$thm_bg,nobold,nounderscore,noitalics]$status_left_separator"
 
     local show_icon="#[fg=$thm_bg,bg=$color,nobold,nounderscore,noitalics]$icon "
-    local show_text="#[fg=$thm_fg,bg=$thm_gray] $text"
+    local show_text="#[fg=$thm_fg,bg=$thm_bg] $text"
 
-    local show_right_separator="#[fg=$thm_gray,bg=$thm_bg,nobold,nounderscore,noitalics]$status_right_separator"
+    local show_right_separator="#[fg=$thm_bg,bg=$thm_bg,nobold,nounderscore,noitalics]$status_right_separator"
 
     if [ "$status_connect_separator" = "yes" ]
     then
-      local show_left_separator="#[fg=$color,bg=$thm_gray,nobold,nounderscore,noitalics]$status_left_separator"
-      local show_right_separator="#[fg=$thm_gray,bg=$thm_gray,nobold,nounderscore,noitalics]$status_right_separator"
+      local show_left_separator="#[fg=$color,bg=$thm_bg,nobold,nounderscore,noitalics]$status_left_separator"
+      local show_right_separator="#[fg=$thm_bg,bg=$thm_bg,nobold,nounderscore,noitalics]$status_right_separator"
 
     else
       local show_left_separator="#[fg=$color,bg=$thm_bg,nobold,nounderscore,noitalics]$status_left_separator"
-      local show_right_separator="#[fg=$thm_gray,bg=$thm_bg,nobold,nounderscore,noitalics]$status_right_separator"
+      local show_right_separator="#[fg=$thm_bg,bg=$thm_bg,nobold,nounderscore,noitalics]$status_right_separator"
     fi
 
   fi
 
   if [ "$status_fill" = "all" ]
   then
-    local show_left_separator="#[fg=$color,bg=$thm_gray,nobold,nounderscore,noitalics]$status_left_separator"
+    local show_left_separator="#[fg=$color,bg=$thm_bg,nobold,nounderscore,noitalics]$status_left_separator"
 
     local show_icon="#[fg=$thm_bg,bg=$color,nobold,nounderscore,noitalics]$icon "
     local show_text="#[fg=$thm_bg,bg=$color]$text"
 
-    local show_right_separator="#[fg=$color,bg=$thm_gray,nobold,nounderscore,noitalics]$status_right_separator"
+    local show_right_separator="#[fg=$color,bg=$thm_bg,nobold,nounderscore,noitalics]$status_right_separator"
 
     if [ "$status_connect_separator" = "yes" ]
     then
@@ -180,7 +180,7 @@ build_status_module() {
   then
     if [ "$status_connect_separator" = "yes" ]
     then
-      local show_right_separator="#[fg=$thm_gray,bg=$color,nobold,nounderscore,noitalics]$status_right_separator"
+      local show_right_separator="#[fg=$thm_bg,bg=$color,nobold,nounderscore,noitalics]$status_right_separator"
     else
       local show_right_separator="#[fg=$thm_bg,bg=$color,nobold,nounderscore,noitalics]$status_right_separator"
     fi
@@ -278,11 +278,11 @@ main() {
   set status-right-length "100"
 
   # messages
-  set message-style "fg=${thm_cyan},bg=${thm_gray},align=centre"
-  set message-command-style "fg=${thm_cyan},bg=${thm_gray},align=centre"
+  set message-style "fg=${thm_cyan},bg=${thm_bg},align=centre"
+  set message-command-style "fg=${thm_cyan},bg=${thm_bg},align=centre"
 
   # panes
-  local pane_border_style=$(get_tmux_option "@mono_pane_border_style" "fg=${thm_gray}")
+  local pane_border_style=$(get_tmux_option "@mono_pane_border_style" "fg=${thm_bg}")
   local pane_active_border_style=$(get_tmux_option "@mono_pane_active_border_style" "fg=${thm_blue}")
   set pane-border-style "${pane_border_style}"
   set pane-active-border-style "${pane_active_border_style}"

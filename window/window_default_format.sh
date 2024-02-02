@@ -1,7 +1,7 @@
 show_window_default_format() {
   local number="#I"
   local color="$thm_blue"
-  local background="$thm_gray"
+  local background="$thm_bg"
   local text="$(get_tmux_option "@mono_window_default_text" "#{b:pane_current_path}")" # use #W for application instead of directory
   local fill="$(get_tmux_option "@mono_window_default_fill" "number")" # number, all, none
   
